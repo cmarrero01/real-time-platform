@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66b45275-e059-4458-a549-8c8cd40418a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/init.js" afterPath="$PROJECT_DIR$/core/init.js" />
-    </list>
+    <list default="true" id="66b45275-e059-4458-a549-8c8cd40418a4" name="Default" comment="" />
     <ignored path="real-time-platform.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,7 +35,7 @@
       <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="33" selection-start="2423" selection-end="2426" vertical-scroll-proportion="0.8532609" vertical-offset="1180" max-vertical-offset="2100">
+            <state line="105" column="0" selection-start="1990" selection-end="1990" vertical-scroll-proportion="0.4293478" vertical-offset="1180" max-vertical-offset="2100">
               <folding />
             </state>
           </provider>
@@ -270,7 +268,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="33" selection-start="2423" selection-end="2426" vertical-scroll-proportion="0.8532609" vertical-offset="1180" max-vertical-offset="2100">
+        <state line="105" column="0" selection-start="1990" selection-end="1990" vertical-scroll-proportion="0.4293478" vertical-offset="1180" max-vertical-offset="2100">
           <folding />
         </state>
       </provider>
