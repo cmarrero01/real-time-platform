@@ -11,7 +11,9 @@ module.exports = function(io){
 	var Game = (function(){
 
 		function setup(socket){
-
+			socket.on('player:move',function(params){
+				socket.broadcast.emit('friend:move',params);
+			})
 		}
 
 		function listener(socket){

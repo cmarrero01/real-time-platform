@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66b45275-e059-4458-a549-8c8cd40418a4" name="Default" comment="" />
+    <list default="true" id="66b45275-e059-4458-a549-8c8cd40418a4" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/js/quintus.js" afterPath="$PROJECT_DIR$/client/js/lib/quintus.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/js/quintus_2d.js" afterPath="$PROJECT_DIR$/client/js/lib/quintus_2d.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/js/quintus_anim.js" afterPath="$PROJECT_DIR$/client/js/lib/quintus_anim.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/js/quintus_audio.js" afterPath="$PROJECT_DIR$/client/js/lib/quintus_audio.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/js/quintus_input.js" afterPath="$PROJECT_DIR$/client/js/lib/quintus_input.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/js/quintus_scenes.js" afterPath="$PROJECT_DIR$/client/js/lib/quintus_scenes.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/js/quintus_sprites.js" afterPath="$PROJECT_DIR$/client/js/lib/quintus_sprites.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/js/quintus_tmx.js" afterPath="$PROJECT_DIR$/client/js/lib/quintus_tmx.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/js/quintus_touch.js" afterPath="$PROJECT_DIR$/client/js/lib/quintus_touch.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/js/quintus_ui.js" afterPath="$PROJECT_DIR$/client/js/lib/quintus_ui.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/platformer.js" afterPath="$PROJECT_DIR$/client/js/platformer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/index.html" afterPath="$PROJECT_DIR$/client/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/init.js" afterPath="$PROJECT_DIR$/core/init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/data/level1.tmx" afterPath="$PROJECT_DIR$/client/data/level1.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="real-time-platform.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,26 +39,7 @@
     <favorites_list name="real-time-platform" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="init.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/init.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="2" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="0" selection-start="1990" selection-end="1990" vertical-scroll-proportion="0.4293478" vertical-offset="1180" max-vertical-offset="2100">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -55,19 +53,22 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/client/js.js" />
-        <option value="$PROJECT_DIR$/core/init.js" />
-        <option value="$PROJECT_DIR$/client/js/platformer.js" />
         <option value="$PROJECT_DIR$/client/index.html" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/client/data/player.json" />
+        <option value="$PROJECT_DIR$/client/data/level1.tmx" />
+        <option value="$PROJECT_DIR$/core/init.js" />
+        <option value="$PROJECT_DIR$/client/js/lib/quintus_input.js" />
+        <option value="$PROJECT_DIR$/client/js/platformer.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="66" />
+    <option name="x" value="65" />
     <option name="y" value="52" />
-    <option name="width" value="917" />
+    <option name="width" value="885" />
     <option name="height" value="1028" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -125,6 +126,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-time-platform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-time-platform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -141,6 +156,18 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="FullScreen" value="false" />
+    <property name="SearchEverywhereHistory" value="Q" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/images" />
+      <recent name="$PROJECT_DIR$/client/data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/js" />
+      <recent name="$PROJECT_DIR$/client/js/lib" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -168,27 +195,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="52" width="917" height="1028" extended-state="4" />
-    <editor active="true" />
+    <frame x="65" y="52" width="885" height="1028" extended-state="4" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24972737" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2519774" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -208,41 +235,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="33" selection-start="740" selection-end="740" vertical-scroll-proportion="0.4620462" vertical-offset="0" max-vertical-offset="909">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../space42/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="18" selection-start="253" selection-end="277" vertical-scroll-proportion="0.20900321" vertical-offset="0" max-vertical-offset="933">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../spaceships/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="25" selection-start="747" selection-end="747" vertical-scroll-proportion="0.5543478" vertical-offset="0" max-vertical-offset="2115">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../spaceships/core/sockets.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="4" selection-start="1870" selection-end="1917" vertical-scroll-proportion="1.5978261" vertical-offset="0" max-vertical-offset="1575">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../spaceships/client/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="96" selection-start="168" selection-end="366" vertical-scroll-proportion="0.15066965" vertical-offset="0" max-vertical-offset="896">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/init.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="2" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
@@ -250,25 +242,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/platformer.js">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="362" column="48" selection-start="8102" selection-end="8102" vertical-scroll-proportion="5.902174" vertical-offset="0" max-vertical-offset="6855">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="97" column="7" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0" vertical-offset="1455" max-vertical-offset="2100">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/index.html">
+    <entry file="file://$PROJECT_DIR$/core/init.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="1127" selection-end="1127" vertical-scroll-proportion="0.51897323" vertical-offset="0" max-vertical-offset="896">
+        <state line="26" column="2" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="480">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="0" selection-start="1990" selection-end="1990" vertical-scroll-proportion="0.4293478" vertical-offset="1180" max-vertical-offset="2100">
+        <state line="0" column="3" selection-start="3" selection-end="3" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2100">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="33" selection-start="740" selection-end="740" vertical-scroll-proportion="0.4620462" vertical-offset="0" max-vertical-offset="909" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../space42/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="18" selection-start="253" selection-end="277" vertical-scroll-proportion="0.20900321" vertical-offset="0" max-vertical-offset="933" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spaceships/core/sockets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="4" selection-start="1870" selection-end="1917" vertical-scroll-proportion="1.5978261" vertical-offset="0" max-vertical-offset="1575" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spaceships/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="96" selection-start="168" selection-end="366" vertical-scroll-proportion="0.15066965" vertical-offset="0" max-vertical-offset="896" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.51897323" vertical-offset="0" max-vertical-offset="896">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spaceships/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="4" selection-start="1359" selection-end="1517" vertical-scroll-proportion="0.0" vertical-offset="1067" max-vertical-offset="2115">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/data/collectables.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="604">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/data/friend.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/data/player.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="69" selection-start="69" selection-end="69" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/lib/quintus_2d.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-11.566225" vertical-offset="6986" max-vertical-offset="7995">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/data/enemies.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="604">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/data/level1.tmx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4141" column="18" selection-start="80982" selection-end="80982" vertical-scroll-proportion="0.24610052" vertical-offset="61973" max-vertical-offset="62550">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/lib/quintus_audio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2445">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../space42/core/sockets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="16" selection-start="799" selection-end="842" vertical-scroll-proportion="0.38897893" vertical-offset="405" max-vertical-offset="1365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/lib/quintus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="857" column="4" selection-start="24586" selection-end="24586" vertical-scroll-proportion="13.816225" vertical-offset="4510" max-vertical-offset="33900">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/lib/quintus_input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="774" column="4" selection-start="20304" selection-end="20385" vertical-scroll-proportion="0.5667244" vertical-offset="11283" max-vertical-offset="14145">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/platformer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="339" column="0" selection-start="8028" selection-end="8028" vertical-scroll-proportion="8.418874" vertical-offset="0" max-vertical-offset="8580">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="60" selection-start="334" selection-end="334" vertical-scroll-proportion="0.34035656" vertical-offset="0" max-vertical-offset="617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="6" selection-start="1360" selection-end="1360" vertical-scroll-proportion="0.6241722" vertical-offset="763" max-vertical-offset="2145">
           <folding />
         </state>
       </provider>

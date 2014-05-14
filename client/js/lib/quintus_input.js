@@ -156,6 +156,12 @@ Quintus.Input = function(Q) {
           Q.inputs[actionName] = true;
           Q.input.trigger(actionName);
           Q.input.trigger('keydown',e.keyCode);
+	      if(actionName){
+		      socket.emit('player:move',{
+			      action:'keydown',
+			      actionName:actionName
+		      });
+	      }
         }
         e.preventDefault();
       },false);
@@ -166,6 +172,12 @@ Quintus.Input = function(Q) {
           Q.inputs[actionName] = false;
           Q.input.trigger(actionName + "Up");
           Q.input.trigger('keyup',e.keyCode);
+	        if(actionName){
+		        socket.emit('player:move',{
+			        action:'keyup',
+			        actionName:actionName
+		        });
+	        }
         }
         e.preventDefault();
       },false);
@@ -799,7 +811,7 @@ Quintus.Input = function(Q) {
             p.vy = -p.speed * collision.normalX;
           } else {
             p.vx = -p.speed;
-          }        
+          }
         } else if(Q.inputs['right']) {
           p.direction = 'right';
           if(collision && p.landed > 0) {

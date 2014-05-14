@@ -74,8 +74,7 @@ if (cluster.isMaster) {
 	var http = require('http');
 
 	/**
-	 * Load module and instance socket.io
-	 * @property io
+	 *
 	 * @type {exports}
 	 */
 	var io = require('socket.io');
@@ -96,7 +95,11 @@ if (cluster.isMaster) {
 	var sio = io.listen(server);
 	/**
 	 *  Configuracion for production
+	 * Load module and instance socket.io
+	 * @property io
+	 * @type {exports}
 	 */
+
 	sio.configure('production', function(){
 		sio.enable('browser client minification');
 		sio.enable('browser client etag');

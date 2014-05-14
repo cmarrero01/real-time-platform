@@ -1,17 +1,50 @@
-// # Quintus platformer example
-//
-// [Run the example](../quintus/examples/platformer/index.html)
-// WARNING: this game must be run from a non-file:// url
-// as it loads a level json file.
-//
-// This is the example from the website homepage, it consists
-// a simple, non-animated platformer with some enemies and a 
-// target for the player.
-window.addEventListener("load",function() {
 
-// Set up an instance of the Quintus engine  and include
-// the Sprites, Scenes, Input and 2D module. The 2D module
-// includes the `TileLayer` class as well as the `2d` componet.
+function Game() {
+
+	var _jumpSpeed = -400;
+	var _speed = 300;
+	var _strength = 100;
+	var _friendMove  = false;
+	var _friendInput = {
+		left:false,
+		up:false,
+		right:false
+	};
+
+	socket.on('friend:move',function(params){
+		if(params.action === 'keydown'){
+			_friendMove = true;
+			if(params.actionName === 'left' && !_friendInput.left){
+				_friendInput.left = true;
+			}
+			if(params.actionName === 'right' && !_friendInput.right){
+				_friendInput.right = true;
+			}
+			if(params.actionName === 'up' && !_friendInput.up){
+				_friendInput.up = true;
+			}
+			if(params.actionName === 'down' && !_friendInput.down){
+				_friendInput.down = true;
+			}
+		}
+
+		if(params.action === 'keyup'){
+			_friendMove = false;
+			if(params.actionName === 'left' && _friendInput.left){
+				_friendInput.left = false;
+			}
+			if(params.actionName === 'right' && _friendInput.right){
+				_friendInput.right = false;
+			}
+			if(params.actionName === 'up' && _friendInput.up){
+				_friendInput.up = false;
+			}
+			if(params.actionName === 'down' && _friendInput.down){
+				_friendInput.down = false;
+			}
+		}
+	});
+
 	var Q = window.Q = Quintus({audioSupported: [ 'wav','mp3','ogg' ]})
 		.include("Sprites, Scenes, Input, 2D, Anim, Touch, UI, TMX, Audio")
 		// Maximize this game to whatever the size of the browser is
@@ -21,45 +54,12 @@ window.addEventListener("load",function() {
 		// Enable sounds.
 		.enableSound();
 
-// Load and init audio files.
-
-
 	Q.SPRITE_PLAYER = 1;
 	Q.SPRITE_COLLECTABLE = 2;
 	Q.SPRITE_ENEMY = 4;
 	Q.SPRITE_DOOR = 8;
-	Q.Sprite.extend("Player",{
 
-		init: function(p) {
-
-			this._super(p, {
-				sheet: "player",  // Setting a sprite sheet sets sprite width and height
-				sprite: "player",
-				direction: "right",
-				standingPoints: [ [ -16, 44], [ -23, 35 ], [-23,-48], [23,-48], [23, 35 ], [ 16, 44 ]],
-				duckingPoints : [ [ -16, 44], [ -23, 35 ], [-23,-10], [23,-10], [23, 35 ], [ 16, 44 ]],
-				jumpSpeed: -400,
-				speed: 300,
-				strength: 100,
-				score: 0,
-				type: Q.SPRITE_PLAYER,
-				collisionMask: Q.SPRITE_DEFAULT | Q.SPRITE_DOOR | Q.SPRITE_COLLECTABLE
-			});
-
-			this.p.points = this.p.standingPoints;
-
-			this.add('2d, platformerControls, animation, tween');
-
-			this.on("bump.top","breakTile");
-
-			this.on("sensor.tile","checkLadder");
-			this.on("enemy.hit","enemyHit");
-			this.on("jump");
-			this.on("jumped");
-
-			Q.input.on("down",this,"checkDoor");
-		},
-
+	Q.Sprite.extend("Entity",{
 		jump: function(obj) {
 			// Only play sound once.
 			if (!obj.p.playedJump) {
@@ -129,6 +129,39 @@ window.addEventListener("load",function() {
 				else if(col.tile == 36) { col.obj.setTile(col.tileX,col.tileY, 24); }
 			}
 			Q.audio.play('coin.mp3');
+		}
+	});
+
+	Q.Entity.extend("Player",{
+
+		init: function(p) {
+
+			this._super(p, {
+				sheet: "player",  // Setting a sprite sheet sets sprite width and height
+				sprite: "player",
+				direction: "right",
+				standingPoints: [ [ -16, 44], [ -23, 35 ], [-23,-48], [23,-48], [23, 35 ], [ 16, 44 ]],
+				duckingPoints : [ [ -16, 44], [ -23, 35 ], [-23,-10], [23,-10], [23, 35 ], [ 16, 44 ]],
+				jumpSpeed: _jumpSpeed,
+				speed: _speed,
+				strength: _strength,
+				score: 0,
+				type: Q.SPRITE_PLAYER,
+				collisionMask: Q.SPRITE_DEFAULT | Q.SPRITE_DOOR | Q.SPRITE_COLLECTABLE
+			});
+
+			this.p.points = this.p.standingPoints;
+
+			this.add('2d, platformerControls, animation, tween');
+
+			this.on("bump.top","breakTile");
+
+			this.on("sensor.tile","checkLadder");
+			this.on("enemy.hit","enemyHit");
+			this.on("jump");
+			this.on("jumped");
+
+			Q.input.on("down",this,"checkDoor");
 		},
 
 		step: function(dt) {
@@ -235,6 +268,79 @@ window.addEventListener("load",function() {
 			}
 		}
 	});
+
+	Q.Entity.extend("Friend",{
+		init: function(p) {
+
+			this._super(p, {
+				sheet: "friend",  // Setting a sprite sheet sets sprite width and height
+				sprite: "friend",
+				direction: "right",
+				standingPoints: [ [ -16, 44], [ -23, 35 ], [-23,-48], [23,-48], [23, 35 ], [ 16, 44 ]],
+				duckingPoints : [ [ -16, 44], [ -23, 35 ], [-23,-10], [23,-10], [23, 35 ], [ 16, 44 ]],
+				jumpSpeed: _jumpSpeed,
+				speed: _speed,
+				strength: _strength,
+				score: 0,
+				type: Q.SPRITE_PLAYER,
+				collisionMask: Q.SPRITE_DEFAULT | Q.SPRITE_DOOR | Q.SPRITE_COLLECTABLE
+			});
+
+			this.p.points = this.p.standingPoints;
+
+			this.add('2d, animation, tween');
+			this.on("bump.top","breakTile");
+			this.on("sensor.tile","checkLadder");
+
+			this.on("sensor.tile","checkLadder");
+			this.on("enemy.hit","enemyHit");
+			this.on("jump");
+			this.on("jumped");
+			//this.p.x = 100;
+		},
+
+		step:function(dt){
+			var p = this.p;
+
+			if(_friendInput.left){
+				p.direction = 'left';
+				p.vx = -p.speed;
+				this.play("walk_left");
+			}
+
+			if(_friendInput.right){
+				p.direction = 'right';
+				p.vx = +p.speed;
+				this.play("walk_right");
+			}
+
+			if(!_friendInput.left && !_friendInput.right){
+				p.vx = 0;
+				this.play("stand_" + this.p.direction);
+			}
+
+			if(_friendInput.down){
+				this.play("duck_" + this.p.direction);
+			}
+
+			if(_friendInput.up) {
+				p.vy = p.jumpSpeed;
+				p.landed = -dt;
+				p.jumping = true;
+				_friendInput.up = false;
+			}
+
+			if(p.landed > 0 && (_friendInput.up) && !p.jumping) {
+				p.vy = p.jumpSpeed;
+				p.landed = -dt;
+				p.jumping = true;
+			} else if(_friendInput.up) {
+				p.jumping = true;
+			}
+			p.landed -= dt;
+		}
+	});
+
 
 	Q.Sprite.extend("Enemy", {
 		init: function(p,defaults) {
@@ -402,51 +508,60 @@ window.addEventListener("load",function() {
 		container.fit(20);
 	});
 
-	Q.loadTMX("level1.tmx, collectables.json, doors.json, enemies.json, fire.mp3, jump.mp3, heart.mp3, hit.mp3, coin.mp3, player.json, player.png", function() {
-		Q.compileSheets("player.png","player.json");
-		Q.compileSheets("collectables.png","collectables.json");
-		Q.compileSheets("enemies.png","enemies.json");
-		Q.compileSheets("doors.png","doors.json");
-		Q.animations("player", {
-			walk_right: { frames: [0,1,2,3,4,5,6,7,8,9,10], rate: 1/15, flip: false, loop: true },
-			walk_left: { frames:  [0,1,2,3,4,5,6,7,8,9,10], rate: 1/15, flip:"x", loop: true },
-			jump_right: { frames: [13], rate: 1/10, flip: false },
-			jump_left: { frames:  [13], rate: 1/10, flip: "x" },
-			stand_right: { frames:[14], rate: 1/10, flip: false },
-			stand_left: { frames: [14], rate: 1/10, flip:"x" },
-			duck_right: { frames: [15], rate: 1/10, flip: false },
-			duck_left: { frames:  [15], rate: 1/10, flip: "x" },
-			climb: { frames:  [16, 17], rate: 1/3, flip: false }
-		});
-		var EnemyAnimations = {
-			walk: { frames: [0,1], rate: 1/3, loop: true },
-			dead: { frames: [2], rate: 1/10 }
-		};
-		Q.animations("fly", EnemyAnimations);
-		Q.animations("slime", EnemyAnimations);
-		Q.animations("snail", EnemyAnimations);
-		Q.stageScene("level1");
-		Q.stageScene('hud', 3, Q('Player').first().p);
+	function LoadMX(){
+		Q.loadTMX("level1.tmx, collectables.json, doors.json, enemies.json, fire.mp3, jump.mp3, heart.mp3, hit.mp3, coin.mp3, player.json, player.png, friend.json, friend.png", function() {
+			Q.compileSheets("player.png","player.json");
+			Q.compileSheets("friend.png","friend.json");
+			Q.compileSheets("collectables.png","collectables.json");
+			Q.compileSheets("enemies.png","enemies.json");
+			Q.compileSheets("doors.png","doors.json");
 
-	}, {
-		progressCallback: function(loaded,total) {
-			var element = document.getElementById("loading_progress");
-			element.style.width = Math.floor(loaded/total*100) + "%";
-			if (loaded == total) {
-				document.getElementById("loading").remove();
+			Q.animations("player", {
+				walk_right: { frames: [0,1,2,3,4,5,6,7,8,9,10], rate: 1/15, flip: false, loop: true },
+				walk_left: { frames:  [0,1,2,3,4,5,6,7,8,9,10], rate: 1/15, flip:"x", loop: true },
+				jump_right: { frames: [13], rate: 1/10, flip: false },
+				jump_left: { frames:  [13], rate: 1/10, flip: "x" },
+				stand_right: { frames:[14], rate: 1/10, flip: false },
+				stand_left: { frames: [14], rate: 1/10, flip:"x" },
+				duck_right: { frames: [15], rate: 1/10, flip: false },
+				duck_left: { frames:  [15], rate: 1/10, flip: "x" },
+				climb: { frames:  [16, 17], rate: 1/3, flip: false }
+			});
+
+			Q.animations("friend", {
+				walk_right: { frames: [0,1,2,3,4,5,6,7,8,9,10], rate: 1/15, flip: false, loop: true },
+				walk_left: { frames:  [0,1,2,3,4,5,6,7,8,9,10], rate: 1/15, flip:"x", loop: true },
+				jump_right: { frames: [13], rate: 1/10, flip: false },
+				jump_left: { frames:  [13], rate: 1/10, flip: "x" },
+				stand_right: { frames:[14], rate: 1/10, flip: false },
+				stand_left: { frames: [14], rate: 1/10, flip:"x" },
+				duck_right: { frames: [15], rate: 1/10, flip: false },
+				duck_left: { frames:  [15], rate: 1/10, flip: "x" },
+				climb: { frames:  [16, 17], rate: 1/3, flip: false }
+			});
+
+			var EnemyAnimations = {
+				walk: { frames: [0,1], rate: 1/3, loop: true },
+				dead: { frames: [2], rate: 1/10 }
+			};
+			Q.animations("fly", EnemyAnimations);
+			Q.animations("slime", EnemyAnimations);
+			Q.animations("snail", EnemyAnimations);
+			Q.stageScene("level1");
+			Q.stageScene('hud', 3, Q('Player').first().p);
+
+		}, {
+			progressCallback: function(loaded,total) {
+				var element = document.getElementById("loading_progress");
+				element.style.width = Math.floor(loaded/total*100) + "%";
+				if (loaded == total) {
+					document.getElementById("loading").remove();
+				}
 			}
-		}
-	});
+		});
+	}
 
-// ## Possible Experimentations:
-// 
-// The are lots of things to try out here.
-// 
-// 1. Modify level.json to change the level around and add in some more enemies.
-// 2. Add in a second level by creating a level2.json and a level2 scene that gets
-//    loaded after level 1 is complete.
-// 3. Add in a title screen
-// 4. Add in a hud and points for jumping on enemies.
-// 5. Add in a `Repeater` behind the TileLayer to create a paralax scrolling effect.
+	LoadMX();
+}
 
-});
+window.addEventListener("load",Game);
